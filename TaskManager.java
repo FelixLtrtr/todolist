@@ -24,12 +24,7 @@ public class TaskManager{
             throw new NumeroIndisponible();
         }
     }
-    /*private static void tacheInconnue(final int id) {
-        Set<Integer> listeNumeros = new HashSet<>();
-        mesTaches.forEach((maTache) -> {listeNumeros.add(maTache.getId());});
-        System.out.println(listeNumeros);
-    }*/
-
+    
     public static void main(String[] args) throws ListeVide, IOException {
         System.out.println("--- Ma ToDoList ---");
         while (true){
