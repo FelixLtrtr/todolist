@@ -47,9 +47,15 @@ public class TaskManager{
                     task.marquerCommeFaite();
                 }
                 mesTaches.add(task);
+                int id = 0;
+                for (Tache tache : mesTaches){
+                    id++;
+                    tache.setId(id);
+                }
+
             }
         }
-
+        int id = 1;
         System.out.println("--- Ma ToDoList ---");
         while (true){
             System.out.println("Que souhaitez-vous faire ?\n1 - Afficher les taches\n2 - Ajouter une tache\n3 - Marquer une tache comme faite\n4 - Filtrer les taches\n5 - Supprimer une tache\n0 - Quitter");
@@ -92,6 +98,12 @@ public class TaskManager{
         String nouvelleTache = lecture.readLine();
         mesTaches.add(new Tache(nouvelleTache));
         System.out.println("Tache ajoutée !");
+        int id = 0;
+        for (Tache tache : mesTaches){
+            id++;
+            tache.setId(id);
+        }
+
     }
 
     private static void filtrerTaches() throws ListeVide, IOException, IllegalArgumentException{
@@ -147,6 +159,11 @@ public class TaskManager{
             mesTaches.removeIf(t -> t.getId() == identifiant);
 
             System.out.println("La tache " + numero + " a été supprimée.");
+            int id = 0;
+            for (Tache tache : mesTaches){
+                id++;
+                tache.setId(id);
+            }
         }catch(NumeroIndisponible e){
             System.out.println("Cette tache n'existe pas");
         }
