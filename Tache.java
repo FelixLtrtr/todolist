@@ -1,19 +1,20 @@
 package todolist;
 
 public class Tache{
-    private static int compteur = 1;
     private int id;
     private String description;
     private Statut statut;
 
     public Tache(final String description){
-        this.id = compteur++;
         this.description = description;
         this.statut = Statut.NON_FAITE;
     }
 
     public int getId(){
         return id;
+    }
+    public void setId(final int identifiant){
+        this.id = identifiant;
     }
     public String getDescription(){
         return description;
